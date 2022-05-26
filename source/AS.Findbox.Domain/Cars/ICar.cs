@@ -14,5 +14,8 @@ namespace AS.Findbox.Domain.Cars
         public string Model { get; }
         public Condition Condition { get; }
         public int Mileage { get; }
+        public double Value { get; }
+        public int Rating { get; }
+        public string Picture { get; }
     }
 }

@@ -23,7 +23,7 @@ namespace As.Findbox.Repository.MongoDB
             _db = client.GetDatabase(config.Database);
             this._session = client.StartSession();
         }
-        public IMongoCollection<ICar> Posts => _db.GetCollection<ICar>("Car");
+        public IMongoCollection<ICar> Cars => _db.GetCollection<ICar>("Car");
      
         internal IClientSessionHandle Session => _session;
 

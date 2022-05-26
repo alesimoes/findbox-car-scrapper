@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AS.Findbox.Domain.Cars
 {
-    public class CarService : ICarService
+    public interface ICarService
     {
     }
 }

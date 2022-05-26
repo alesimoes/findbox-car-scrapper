@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AS.Findbox.Domain.Cars
+namespace AS.Findbox.Application.Adapters.Makers
 {
-    public class CarService : ICarService
+    public class GetMakersRequest
     {
     }
 }
