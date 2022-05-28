@@ -1,0 +1,108 @@
+﻿<section role="main" class="sds-page-container" id="ae-main-content">
+
+        <div data-qa="notifications-are-here"></div>
+
+
+
+
+
+
+<section class="sds-page-section session-container">
+  <header class="sds-page-section__header" role="presentation">
+    <h1 class="sds-heading--1 sds-page-section__title">Sign in</h1>
+  </header>
+
+  <div class="sds-page-section__content">
+
+    <div class="profile-container-with-sidebar">
+      <div class="column-1">
+
+        <p class="sds-page-section__title--sub signup-block">New to Cars.com?
+<a href="/signup/?redirect_path=%2F">Sign up.</a>
+          <span class="dealer-signin-link">
+Are you a <a href="https://www.growwithcars.com" data-activity-rule-type="custom" data-component="signin-dealer" data-linkname="signin-grow-with-cars">dealer?</a>
+          </span>
+        </p>
+<form action="/signin/" class="session-form" method="post"><input name="_csrf_token" type="hidden" value="AC1QHhwQNgwLMD0YLCYeAwkSGUsnPRcgjX7UercuJVybtoqPdtq-emrf">
+        <div class="sds-field-group">
+          <div class="sds-field">
+            <div class="sds-input-container">
+<input class="sds-text-field" id="email" maxlength="255" name="user[email]" placeholder=" " type="text" value="al.simoes@outlook.com">
+<label class="sds-label" for="email">Email</label>
+            </div>
+
+          </div>
+
+          <div class="sds-field">
+            <div class="sds-input-container">
+<input class="sds-text-field" id="password" maxlength="255" name="user[password]" placeholder=" " type="password">
+<label class="sds-label" for="password">Password</label>
+            </div>
+
+            <div class="password-help">
+              <p class="sds-helper-text">Minimum of eight characters</p>
+              <p><a href="/forgot_password/?email=">Forgot password?</a></p>
+            </div>
+          </div>
+        </div>
+<div class="sds-disclaimer ">
+By signing in to your profile, you agree to our&nbsp;
+<a data-linkname="privacy-statement" data-activity-rule-type="custom" data-component="privacy-statement" href="/about/privacy/" target="_blank" aria-describedby="audioeye_new_window_message">Privacy Statement</a>
+  &nbsp;and&nbsp;
+<a data-linkname="tos" data-activity-rule-type="custom" data-component="terms-of-service" href="/about/terms/" target="_blank" aria-describedby="audioeye_new_window_message">Terms of Service</a>.
+</div>
+
+        <div class="sds-field-group">
+<input id="redirect_path" name="user[redirect_path]" type="hidden" value="/">
+          <div class="sds-field">
+<button class="sds-button" type="submit">Sign in</button>
+          </div>
+        </div>
+</form>
+      </div>
+<div class="column-2 sidebar-social-login">
+    <h3 class="social-title sds-heading--3">Connect with social</h3>
+    <ul class="sds-list">
+    <li class="social-link">
+<a class="sds-button facebook-button" data-activity-rule-type="custom" data-component="continue-with-social" data-linkname="signin-social-facebook" href="/signin/fb_go/">
+  <svg class="facebook-svg-icon" xmlns="http://www.w3.org/2000/svg" width="1365.12" height="1365.12" viewBox="0 0 14222 14222" role="presentation" aria-hidden="true" tabindex="-1">
+    <circle cx="7111" cy="7112" r="7111" fill="#fff"></circle>
+    <path d="M9879 9168l315-2056H8222V5778c0-562 275-1111 1159-1111h897V2917s-814-139-1592-139c-1624 0-2686 984-2686 2767v1567H4194v2056h1806v4969c362 57 733 86 1111 86s749-30 1111-86V9168z" fill="#1977f3"></path>
+  </svg>
+  Sign in with Facebook
+</a>
+
+    </li>
+    <li>
+<a class="sds-button google-button" data-activity-rule-type="custom" data-component="continue-with-social" data-linkname="signin-social-google" href="/signin/google_go/">
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true" tabindex="-1">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M28.48 16.2955C28.48 15.3736 28.3973 14.4873 28.2436 13.6364H16V18.665H22.9964C22.695 20.29 21.7791 21.6668 20.4023 22.5886V25.8505H24.6036C27.0618 23.5873 28.48 20.2545 28.48 16.2955Z" fill="#4285F4"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 29C19.51 29 22.4527 27.8359 24.6036 25.8505L20.4023 22.5886C19.2382 23.3686 17.7491 23.8295 16 23.8295C12.6141 23.8295 9.74819 21.5427 8.72592 18.47H4.38274V21.8382C6.52183 26.0868 10.9182 29 16 29Z" fill="#34A853"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.72591 18.47C8.46591 17.69 8.31818 16.8568 8.31818 16C8.31818 15.1432 8.46591 14.31 8.72591 13.53V10.1618H4.38273C3.50227 11.9168 3 13.9023 3 16C3 18.0977 3.50227 20.0832 4.38273 21.8382L8.72591 18.47Z" fill="#FBBC05"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 8.17045C17.9086 8.17045 19.6223 8.82636 20.9696 10.1145L24.6982 6.38591C22.4468 4.28818 19.5041 3 16 3C10.9182 3 6.52183 5.91318 4.38274 10.1618L8.72592 13.53C9.74819 10.4573 12.6141 8.17045 16 8.17045Z" fill="#EA4335"></path>
+  </svg>
+  Sign in with Google
+</a>
+
+    </li>
+    <li class="social-link">
+<a class="sds-button apple-button" data-activity-rule-type="custom" data-component="continue-with-social" data-linkname="signin-social-google" href="/signin/apple_go/">
+  <svg width="28px" height="44px" viewBox="0 0 31 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="presentation" aria-hidden="true" tabindex="-1">
+    <title>Apple logo</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <path d="M15.7099491,14.8846154 C16.5675461,14.8846154 17.642562,14.3048315 18.28274,13.5317864 C18.8625238,12.8312142 19.2852829,11.852829 19.2852829,10.8744437 C19.2852829,10.7415766 19.2732041,10.6087095 19.2490464,10.5 C18.2948188,10.5362365 17.1473299,11.140178 16.4588366,11.9494596 C15.9152893,12.56548 15.4200572,13.5317864 15.4200572,14.5222505 C15.4200572,14.6671964 15.4442149,14.8121424 15.4562937,14.8604577 C15.5166879,14.8725366 15.6133185,14.8846154 15.7099491,14.8846154 Z M12.6902416,29.5 C13.8618881,29.5 14.3812778,28.714876 15.8428163,28.714876 C17.3285124,28.714876 17.6546408,29.4758423 18.9591545,29.4758423 C20.2395105,29.4758423 21.0971074,28.292117 21.9063891,27.1325493 C22.8123013,25.8038779 23.1867451,24.4993643 23.2109027,24.4389701 C23.1263509,24.4148125 20.6743484,23.4122695 20.6743484,20.5979021 C20.6743484,18.1579784 22.6069612,17.0588048 22.7156707,16.974253 C21.4353147,15.1382708 19.490623,15.0899555 18.9591545,15.0899555 C17.5217737,15.0899555 16.3501271,15.9596313 15.6133185,15.9596313 C14.8161157,15.9596313 13.7652575,15.1382708 12.521138,15.1382708 C10.1536872,15.1382708 7.75,17.0950413 7.75,20.7911634 C7.75,23.0861411 8.64383344,25.513986 9.74300699,27.0842339 C10.6851558,28.4129053 11.5065162,29.5 12.6902416,29.5 Z" id="" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+  </svg>
+  Sign in with Apple
+</a>
+
+    </li>
+    </ul>
+</div>
+
+    </div>
+  </div>
+
+</section>
+
+    </section>
