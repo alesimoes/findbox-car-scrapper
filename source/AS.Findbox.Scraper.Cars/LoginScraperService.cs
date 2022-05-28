@@ -1,5 +1,6 @@
 ﻿using AS.Findbox.Application.Adapters.Cars;
 using AS.Findbox.Application.Adapters.Login;
+using AS.Findbox.Scraper.Cars.Exceptions;
 using AS.Findbox.Scraper.Cars.Utils;
 using Newtonsoft.Json;
 using System;
@@ -24,9 +25,14 @@ namespace AS.Findbox.Scraper.Cars
 
         public async Task<string> Login(string email, string password)
         {
-            var responseGet = await this._client.GetAsync("signin/");
-            var token = await responseGet.Content.GetInputValue("_csrf_token");
 
+            var responseGet = await this._client.GetAsync("signin/");
+            if (!responseGet.IsSuccessStatusCode)
+            {
+                throw new LoginFailedException();
+            }
+
+            var token = await responseGet.Content.GetInputValue("_csrf_token");
             var formContent = new FormUrlEncodedContent(new[]
             {
                     new KeyValuePair<string, string>("_csrf_token", token),
@@ -36,8 +42,13 @@ namespace AS.Findbox.Scraper.Cars
             });
 
             var response = await this._client.PostAsync("signin/", formContent);
-            var user = await response.Content.GetSpanText("desktop-nav-user-name");
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new LoginFailedException();
+            }
 
+            var user = await response.Content.GetSpanText("nav-user-name");
+            
             return user;
         }
     }

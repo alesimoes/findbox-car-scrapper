@@ -14,7 +14,16 @@ namespace AS.Findbox.Application.Adapters.Login
         public LoginResponse(string user)
         {
             this.User = user;
+
+            this.Validate();
         }
 
+        private void Validate()
+        {
+            if (string.IsNullOrEmpty(User))
+            {
+                throw new ArgumentNullException("User");
+            }
+        }
     }
 }

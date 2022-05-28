@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{63C243
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AS.Findbox.Repository.MongoDB", "AS.Findbox.Repository.MongoDB\AS.Findbox.Repository.MongoDB.csproj", "{B9190C69-7B76-41A2-93AD-63EB7D9ED350}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AS.Findbox.Scraper.Cars", "AS.Findbox.Scraper.Cars\AS.Findbox.Scraper.Cars.csproj", "{C27E834D-B91A-41B0-955D-7F0E34A039F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AS.Findbox.Scraper.Cars", "AS.Findbox.Scraper.Cars\AS.Findbox.Scraper.Cars.csproj", "{C27E834D-B91A-41B0-955D-7F0E34A039F5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AS.Findbox", "AS.Findbox.Console\AS.Findbox.csproj", "{425CF9F2-BD1B-4921-834F-30082EC9F7FD}"
 EndProject

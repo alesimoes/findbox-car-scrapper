@@ -8,5 +8,8 @@ namespace AS.Findbox.Domain.Cars
 {
     public interface ICarRepository
     {
+        Task Add(Car car);
+        Task<Car> Find(Guid id);
+        Task Update(Car car);
     }
 }

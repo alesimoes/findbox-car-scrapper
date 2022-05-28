@@ -20,9 +20,9 @@ namespace AS.Findbox
             this._mediator = mediator;
         }
 
-        public void Login()
+        public void Login(string email, string password)
         {
-            var response = this._mediator.SendAsync<LoginResponse>(new LoginRequest("al.simoes@outlook.com", "findbox@2022"));
+            var response = this._mediator.SendAsync<LoginResponse>(new LoginRequest(email, password));
             response.Wait();
 
             Console.WriteLine(response.Result.User);
@@ -32,7 +32,6 @@ namespace AS.Findbox
         {
             var response = this._mediator.SendAsync<List<MakerResponse>>(new GetMakersRequest());
             response.Wait();
-
             Console.WriteLine("Makers:");
             int option = 1;
             foreach (var make in response.Result)
@@ -60,16 +59,17 @@ namespace AS.Findbox
 
         public List<CarResponse> GetSearchCars(string make, string model)
         {
+            Console.WriteLine("Waiting...");
             var response = this._mediator.SendAsync<List<CarResponse>>(new GetSearchRequest(make, model));
             response.Wait();
 
-            Console.WriteLine("Cars:");
-            //int option = 1;
-            //foreach (var car in response.Result)
-            //{
-            //    Console.WriteLine($"{option} - {car.}");
-            //    option++;
-            //}
+            Console.WriteLine("Cars found:");
+            int option = 1;
+            foreach (var car in response.Result)
+            {
+                Console.WriteLine($"{option} - {car.Title} - Mileage:{car.Mileage} ${car.Value} - Rating:{car.Rating}");
+                option++;
+            }
             return response.Result;
         }
 

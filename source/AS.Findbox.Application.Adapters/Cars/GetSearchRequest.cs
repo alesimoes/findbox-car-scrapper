@@ -15,6 +15,21 @@ namespace AS.Findbox.Application.Adapters.Cars
         {
             Make = make;
             Model = model;
+
+            this.Validate();
+        }
+
+        private void Validate()
+        {
+            if (string.IsNullOrEmpty(Make))
+            {
+                throw new ArgumentNullException("Make");
+            }
+
+            if (string.IsNullOrEmpty(Model))
+            {
+                throw new ArgumentNullException("Model");
+            }
         }
     }
 }

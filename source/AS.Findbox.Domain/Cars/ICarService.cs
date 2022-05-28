@@ -8,5 +8,6 @@ namespace AS.Findbox.Domain.Cars
 {
     public interface ICarService
     {
+        Task Save(Car car);
     }
 }

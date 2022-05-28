@@ -15,7 +15,20 @@ namespace AS.Findbox.Application.Adapters.Login
         {
             this.Email = email;
             this.Password = password;
+            this.Validate();
         }
 
+        private void Validate()
+        {
+            if (string.IsNullOrEmpty(Email))
+            {
+                throw new ArgumentNullException("Email");
+            }
+
+            if (string.IsNullOrEmpty(Password))
+            {
+                throw new ArgumentNullException("Password");
+            }
+        }
     }
 }

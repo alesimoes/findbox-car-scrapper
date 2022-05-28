@@ -8,8 +8,12 @@
   <ItemGroup>
     <PackageReference Include="FluentMediator" Version="0.4.7" />
     <PackageReference Include="FluentMediator.Microsoft.Extensions.DependencyInjection" Version="0.4.7" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.0.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="4.0.1" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
   </ItemGroup>
 
@@ -18,6 +22,12 @@
     <ProjectReference Include="..\AS.Findbox.Domain\AS.Findbox.Domain.csproj" />
     <ProjectReference Include="..\AS.Findbox.Repository.MongoDB\AS.Findbox.Repository.MongoDB.csproj" />
     <ProjectReference Include="..\AS.Findbox.Scraper.Cars\AS.Findbox.Scraper.Cars.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

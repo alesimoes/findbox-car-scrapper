@@ -19,11 +19,17 @@ namespace AS.Findbox.Scraper.Cars.Utils
         public static async Task<string> GetSpanText(this HttpContent content, string className)
         {
             var html = await content.ReadAsStringAsync();
-            var regexElement = new Regex($"(<span.*class=\"{className}\">)(.|\\s).*");
+            var regexElement = new Regex($"((<span.*class=\".*{className}\">?\\s).*?\\s+(<\\/span>))|((<span.*class=\".*{className}\">).*(<\\/span>))");
             var htmlElement = regexElement.Match(html).Value;
             var regexSpan = new Regex($"(<span.*class=\"{className}\">)");
             var spanTag = regexSpan.Match(htmlElement).Value;
-            htmlElement = htmlElement.Replace(spanTag, "");
+
+            if (string.IsNullOrEmpty(htmlElement))
+            {
+                return String.Empty;
+            }
+
+            htmlElement = htmlElement.Replace(spanTag, "").Replace("</span>", "").Trim();
             return htmlElement;
         }
 
@@ -70,9 +76,15 @@ namespace AS.Findbox.Scraper.Cars.Utils
             return regexElement.Match(html).Value;
         }
 
+        public static string GetGuid(string html)
+        {
+            var regexElement = new Regex($"id=\"([A-z-0-9]+)");
+            return new string(regexElement.Match(html).Value.Replace("id=\"", "").Take(36).ToArray());
+        }
+
         public static string GetTagText(string html)
         {
-            var regexElement = new Regex($"[A-z 0-9 ,.]+<");
+            var regexElement = new Regex($"[A-z-0-9 ,.]+<");
             return new string(regexElement.Match(html).Value.SkipLast(1).ToArray());
         }
     }

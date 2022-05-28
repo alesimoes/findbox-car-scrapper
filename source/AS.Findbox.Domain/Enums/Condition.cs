@@ -9,6 +9,7 @@ namespace AS.Findbox.Domain.Enums
     public enum Condition
     {
         New,
-        Used
+        Used,
+        Certified
     }
 }
