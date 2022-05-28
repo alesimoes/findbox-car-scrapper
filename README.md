@@ -8,8 +8,13 @@ Bring up the latest MongoDB database as well as a nice admin panel that You’ll
 
 Database configurations are in appsetting.json:
 
-    "Email": "al.simoes@outlook.com",
-    "Password": "findbox@2022"
+      "MongoDB": {
+        "Database": "Findbox",
+        "Host": "localhost",
+        "Port": 27017,
+        "User": "root",
+        "Password": "findbox"
+        },
 
 User and password are in appsetting.json:
 
