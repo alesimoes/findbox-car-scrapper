@@ -25,20 +25,41 @@ namespace AS.Findbox
 
             //var user = new UserConfiguration();
             var user = configuration.GetSection("User").Get<UserConfiguration>();
-            carPresenter.Login(user.Email,user.Password);
+            carPresenter.Login(user.Email, user.Password);
 
-           
-            var makers = carPresenter.GetMakers();
-            var makeSelected = GetMake(makers);
+            var makeSelected = SelectMake(carPresenter);
 
-             Console.Clear();
-            var models = carPresenter.GetModels(makeSelected.Id);
-            var modelSelected = GetModel(models);
             Console.Clear();
-            var cars = carPresenter.GetSearchCars(makeSelected.Id, modelSelected.Slug);
-            Console.WriteLine("All cars have been saved in the database...");
+            var modelSelected = SelectModel(carPresenter, makeSelected);
+            if (modelSelected != null)
+            {
+                Console.Clear();
+                var cars = carPresenter.GetSearchCars(makeSelected.Id, modelSelected.Slug);
+                Console.WriteLine("All cars have been saved in the database...");
+            }
+          
             Console.WriteLine("End...");
             Console.ReadKey();
+        }
+
+        private static ModelResponse SelectModel(CarScraperPresenter carPresenter, MakerResponse makeSelected)
+        {
+            var models = carPresenter.GetModels(makeSelected.Id);
+            if (models == null || models.Count == 0)
+            {
+                Console.WriteLine("Models not found.");         
+                return null;
+            }
+
+            var modelSelected = GetModel(models);
+            return modelSelected;
+        }
+
+        private static MakerResponse SelectMake(CarScraperPresenter carPresenter)
+        {
+            var makers = carPresenter.GetMakers();
+            var makeSelected = GetMake(makers);
+            return makeSelected;
         }
 
         private static void Configure()
@@ -56,14 +77,12 @@ namespace AS.Findbox
         {
             Console.WriteLine("Select make:");
             var make = Console.ReadLine();
-            if (int.TryParse(make, out int id))
+            if (!int.TryParse(make, out int id) || id > makers.Count + 1 || id < 1)
             {
-                if (id > makers.Count + 1 || id < 1)
-                {
-                    Console.WriteLine("Invalid option.");
-                    GetMake(makers);
-                }
+                Console.WriteLine("Invalid option.");
+                return GetMake(makers);
             }
+
             var makeSelected = makers[id - 1];
             return makeSelected;
         }
@@ -72,14 +91,12 @@ namespace AS.Findbox
         {
             Console.WriteLine("Select model:");
             var model = Console.ReadLine();
-            if (int.TryParse(model, out int id))
+            if (!int.TryParse(model, out int id) || id > models.Count + 1 || id < 1)
             {
-                if (id > models.Count + 1 || id < 1)
-                {
-                    Console.WriteLine("Invalid option.");
-                    GetModel(models);
-                }
+                Console.WriteLine("Invalid option.");
+                return GetModel(models);
             }
+            
             return models[id - 1];
         }
     }
