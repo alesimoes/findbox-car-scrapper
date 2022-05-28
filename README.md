@@ -1,10 +1,20 @@
 # Hexagonal and Clean Architecture by Alexandre Simões Silva
-The simplest demo on how to implement a Web Api using .NET Core and MongoDb that protects the business rules from framework dependencies by following the Clean Architecture Principles.
+The simplest demo on how to implement a Console Aplication using .NET Core and MongoDb that protects the business rules from framework dependencies by following the Clean Architecture Principles.
 
 ### Running Application
 Bring up the latest MongoDB database as well as a nice admin panel that You’ll be able to use to see what is actually happening. To get started, run:
 
     $ docker-compose up -d
+
+Database configurations are in appsetting.json:
+
+    "Email": "al.simoes@outlook.com",
+    "Password": "findbox@2022"
+
+User and password are in appsetting.json:
+
+    "Email": "al.simoes@outlook.com",
+    "Password": "findbox@2022"
 
 
 # Critique
@@ -14,11 +24,10 @@ The best way to improve the requests is use the same request to get Makers and M
 
 There are improvements that need to be done in algorithm that find data in the html file.
 
-There are improvements that need to be done to handle conversion erros.
+There are improvements that need to be done to handle conversion erros. How var we handle car import Exceptions and etc..
 
 There are improvements that need to be done to store the pictures, probably save the images in any storage like S3.
 Probably enrich the car entity downloading the picture as async to not make the process slow.
-
 
 # Architecture
 ## Motivation
