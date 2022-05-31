@@ -1,4 +1,4 @@
-# Hexagonal and Clean Architecture by Alexandre Simões Silva
+# Hexagonal and Clean Architecture
 The simplest demo on how to implement a Console Aplication using .NET Core and MongoDb that protects the business rules from framework dependencies by following the Clean Architecture Principles.
 
 ### Running Application
@@ -16,9 +16,9 @@ Database configurations are in appsetting.json:
         "Password": "findbox"
         },
 
-User and password are in appsetting.json:
+Set your user and password for www.cars.com in appsetting.json:
 
-    "Email": "al.simoes@outlook.com",
+    "Email": "blablabla@outlook.com",
     "Password": "findbox@2022"
 
 
